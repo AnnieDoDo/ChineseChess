@@ -1548,7 +1548,10 @@ moc_widget.o: moc_widget.cpp
 
 moc_chessboard.o: moc_chessboard.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_chessboard.o moc_chessboard.cpp
+moc_chessboard.o: chessboard.moc
 
+chessboard.moc: chessboard.cpp
+	moc $(DEFINES) $(INCPATH) -i $< -o $@
 ####### Install
 
 install_target: first FORCE
