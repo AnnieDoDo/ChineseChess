@@ -1,4 +1,8 @@
 #include "chessboard.h"
+#include <QPushButton>
+
+using namespace std;
+
 
 
 
@@ -18,7 +22,16 @@ chessboard::chessboard(QObject *parent) :
     y=0;
 }
 
-void chessboard::setBoard(){
+chessboard::~chessboard()
+{
 
 }
+void chessboard::setBoard(){
+    btnpos=sender();
+    QPushButton *newbtnpos=qobject_cast<QPushButton *>(btnpos);
+    x=newbtnpos->x();
+    y=newbtnpos->y();
+    cout<<x<<" "<<y<<endl;
+}
+
 

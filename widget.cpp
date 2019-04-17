@@ -20,7 +20,7 @@ widget::widget(QWidget *parent) :
         {
             btn[i][j] = new QPushButton(this);
             btn[i][j]->setGeometry(335+i*88,40+j*86,50,50);
-            QObject::connect(btn[i][j],SIGNAL(clicked()),&cb,SLOT(cb.setBoard));
+            QObject::connect(btn[i][j],SIGNAL(clicked()),&cb,SLOT(setBoard()));
         }
     }
 }

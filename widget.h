@@ -22,9 +22,6 @@ public:
     QPushButton *btn[9][10];
 private:
     Ui::widget *ui;
-
-
-
     QLabel *label1;
 };
 

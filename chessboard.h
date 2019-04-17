@@ -2,6 +2,7 @@
 #define CHESSBOARD_H
 #include <iostream>
 #include <QObject>
+#include <QPushButton>
 
 class chessboard : public QObject
 {
@@ -9,9 +10,11 @@ class chessboard : public QObject
 
 public:
     explicit chessboard(QObject *parent = nullptr);
+    ~chessboard();
     int *board[9][10];
     int x;
     int y;
+    QObject* btnpos;
 
 public slots:
     void setBoard();
