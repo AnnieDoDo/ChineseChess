@@ -3,9 +3,6 @@
 
 using namespace std;
 
-
-
-
 chessboard::chessboard(QObject *parent) :
     QObject(parent)
 {
@@ -14,12 +11,8 @@ chessboard::chessboard(QObject *parent) :
         for(int j=0;j<10;j++)
         {
             board[i][j] = nullptr;
-
         }
     }
-
-    x=0;
-    y=0;
 }
 
 chessboard::~chessboard()
@@ -27,10 +20,9 @@ chessboard::~chessboard()
 
 }
 void chessboard::setBoard(){
-    btnpos=sender();
-    QPushButton *newbtnpos=qobject_cast<QPushButton *>(btnpos);
-    x=newbtnpos->x();
-    y=newbtnpos->y();
+    QPushButton *newbtnpos=qobject_cast<QPushButton *>(sender());
+    int x = newbtnpos->x();
+    int y = newbtnpos->y();
     cout<<x<<" "<<y<<endl;
 }
 

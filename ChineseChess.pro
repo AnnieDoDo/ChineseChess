@@ -25,12 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    chess.cpp \
+    chess/king.cpp \
         main.cpp \
         mainwindow.cpp \
     widget.cpp \
     chessboard.cpp
 
 HEADERS += \
+    chess.h \
+    chess/king.h \
         mainwindow.h \
     widget.h \
     chessboard.h

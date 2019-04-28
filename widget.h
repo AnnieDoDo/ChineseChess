@@ -23,6 +23,7 @@ public:
 private:
     Ui::widget *ui;
     QLabel *label1;
+    chessboard cb;
 };
 
 #endif // WIDGET_H
