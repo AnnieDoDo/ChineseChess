@@ -48,4 +48,6 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 DISTFILES += \
-    chessboard.png
+    chessboard.png \
+    red_king.jpg \
+    red_king.png

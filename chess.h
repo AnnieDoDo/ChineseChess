@@ -2,15 +2,23 @@
 #define CHESS_H
 
 #include <QObject>
+#include "QString"
+#include <QPixmap>
+
+
 
 class chess : public QObject
 {
     Q_OBJECT
 public:
     explicit chess(QObject *parent = nullptr);
-    virtual void legalMove() = 0;
+    virtual void legalMoveClickFirst(int x0,int y0) = 0;
+    virtual void legalMoveClickSecond(int x0,int y0) = 0;
+    virtual bool legalMove() = 0;
     virtual void legalCapture() = 0;
+
     void checkMate();
+    QPixmap chesspic;
 
 protected:
     int fx;
@@ -18,7 +26,7 @@ protected:
     int sx;
     int sy;
     bool rb;
-    bool king;
+    bool isking;
 
 };
 
