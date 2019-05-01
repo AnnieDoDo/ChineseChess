@@ -23,7 +23,7 @@ void horse::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool horse::legalMove(chess **chessposition){
+bool horse::legalMove(chess *chessposition[9][10]){
 
     return true;
 }

@@ -14,7 +14,7 @@ public:
     explicit chess(QObject *parent = nullptr);
     virtual void legalMoveClickFirst(int x0,int y0) = 0;
     virtual void legalMoveClickSecond(int x0,int y0) = 0;
-    virtual bool legalMove(chess **chessposition) = 0;
+    virtual bool legalMove(chess *chessposition[9][10]) = 0;
     virtual void legalCapture() = 0;
 
     void checkMate();

@@ -23,7 +23,7 @@ void soldier::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool soldier::legalMove(chess **chessposition){
+bool soldier::legalMove(chess *chessposition[9][10]){
    return true;
 
 }

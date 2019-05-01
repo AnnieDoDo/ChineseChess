@@ -22,7 +22,7 @@ void advisor::legalMoveClickSecond(int x0, int y0){
 
 }
 
-bool advisor::legalMove(chess **chessposition){
+bool advisor::legalMove(chess *chessposition[9][10]){
     if((abs(sx-fx)!=1)||(abs(sy-fy)!=1)){
         return false;
     }

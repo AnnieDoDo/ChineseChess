@@ -23,7 +23,7 @@ void cannon::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool cannon::legalMove(chess **chessposition){
+bool cannon::legalMove(chess *chessposition[9][10]){
 
     return true;
 }

@@ -23,7 +23,7 @@ void king::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool king::legalMove(chess **chessposition){
+bool king::legalMove(chess *chessposition[9][10]){
     int plus=0;
     if(abs(sx-fx)>1){
         return false;

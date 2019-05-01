@@ -130,7 +130,7 @@ void chessboard::setBoard(){
         x2 = (y-40)/86;
         board[y1][x1]->legalMoveClickSecond(y2,x2);
         clickedCount=0;
-        if(board[y1][x1]->legalMove(&board[9][10])==true){
+        if(board[y1][x1]->legalMove(board)==true){
             board[y2][x2]=board[y1][x1];
             board[y1][x1]=nullptr;
             chessboard::renewboard();

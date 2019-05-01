@@ -23,7 +23,7 @@ void rook::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool rook::legalMove(chess **chessposition){
+bool rook::legalMove(chess *chessposition[9][10]){
 
     return true;
 }
