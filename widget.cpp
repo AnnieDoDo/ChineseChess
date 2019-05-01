@@ -34,7 +34,6 @@ widget::widget(QWidget *parent) :
             btn[i][j]->setIcon(ButtonIcon[i][j]);
             btn[i][j]->setIconSize(btn[i][j]->rect().size());
             if(cb.board[i][j]!=nullptr){
-                cout<<"checkchesspic"<<endl;
                 widget::showChessPic(i,j);
             }
             QObject::connect(&cb,SIGNAL(renewboard()),this,SLOT(checkChessPic()));
@@ -42,7 +41,6 @@ widget::widget(QWidget *parent) :
 
         }
     }
-    cout<<"widget"<<endl;
     widget::checkChessPic();
 
 }
@@ -58,7 +56,6 @@ void widget::checkChessPic(){
             btn[i][j]->setIcon(ButtonIcon[i][j]);
             btn[i][j]->setIconSize(btn[i][j]->rect().size());
             if(cb.board[i][j]!=nullptr){
-                cout<<"checkchesspic"<<endl;
                 widget::showChessPic(i,j);
             }
         }
@@ -73,7 +70,7 @@ void widget::showChessPic(int i,int j)
     ButtonIcon[i][j] = QIcon(cb.board[i][j]->chesspic);
     btn[i][j]->setIcon(ButtonIcon[i][j]);
     btn[i][j]->setIconSize(btn[i][j]->rect().size());
-    cout<<"showchesspic"<<i<< " "<<j<<endl;
+
 }
 
 widget::~widget()

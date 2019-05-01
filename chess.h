@@ -14,18 +14,17 @@ public:
     explicit chess(QObject *parent = nullptr);
     virtual void legalMoveClickFirst(int x0,int y0) = 0;
     virtual void legalMoveClickSecond(int x0,int y0) = 0;
-    virtual bool legalMove() = 0;
+    virtual bool legalMove(chess **chessposition) = 0;
     virtual void legalCapture() = 0;
 
     void checkMate();
     QPixmap chesspic;
-
+    bool rb;
 protected:
     int fx;
     int fy;
     int sx;
     int sy;
-    bool rb;
     bool isking;
 
 };

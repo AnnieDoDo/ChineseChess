@@ -1,6 +1,5 @@
 #include "chess/king.h"
 #include "chessboard.h"
-
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -24,7 +23,7 @@ void king::legalMoveClickSecond(int x0, int y0){
     sy = y0;
 
 }
-bool king::legalMove(){
+bool king::legalMove(chess **chessposition){
     int plus=0;
     if(abs(sx-fx)>1){
         return false;
@@ -39,7 +38,18 @@ bool king::legalMove(){
     if(plus>1){
         return false;
     }
-
+    if(sx<3||sx>5)
+    {
+        return false;
+    }
+    if(sy>2&&sy<7)
+    {
+        return false;
+    }
+    if((fx==sx)&&(fy==sy))
+    {
+        return false;
+    }
     return true;
 }
 void king::legalCapture(){

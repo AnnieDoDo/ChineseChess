@@ -10,7 +10,7 @@ public:
     king();
     void legalMoveClickFirst(int x0,int y0);
     void legalMoveClickSecond(int x0,int y0);
-    bool legalMove();
+    bool legalMove(chess **chessposition);
     void legalCapture();
 
 

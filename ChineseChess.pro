@@ -30,14 +30,26 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     widget.cpp \
-    chessboard.cpp
+    chessboard.cpp \
+    chess/advisor.cpp \
+    chess/elephant.cpp \
+    chess/rook.cpp \
+    chess/horse.cpp \
+    chess/cannon.cpp \
+    chess/soldier.cpp
 
 HEADERS += \
     chess.h \
     chess/king.h \
         mainwindow.h \
     widget.h \
-    chessboard.h
+    chessboard.h \
+    chess/advisor.h \
+    chess/elephant.h \
+    chess/rook.h \
+    chess/horse.h \
+    chess/cannon.h \
+    chess/soldier.h
 
 FORMS += \
         mainwindow.ui \
@@ -50,4 +62,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     chessboard.png \
     red_king.jpg \
-    red_king.png
+    red_king.png \
+    red_advisor.png

@@ -17,10 +17,12 @@ public:
     chess *board[9][10];
 
     bool clickedCount;
+    bool turn;
     int y1;
     int x1;
     int y2;
     int x2;
+
 
 public slots:
     void setBoard();
