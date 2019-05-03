@@ -2,6 +2,7 @@
 #include "chessboard.h"
 #include <cmath>
 #include <iostream>
+using namespace std;
 advisor::advisor()
 {
     fx = 0;
@@ -38,9 +39,20 @@ bool advisor::legalMove(chess *chessposition[9][10]){
     {
         return false;
     }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        if(chessposition[fx][fy]->rb==chessposition[sx][sy]->rb)
+        {
+            return false;
+        }
+    }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        chessposition[sx][sy]=nullptr;
+        cout<<"advisor legalcapture"<<endl;
+        delete chessposition[sx][sy];
+    }
     return true;
 }
 
-void advisor::legalCapture(){
 
-}

@@ -85,9 +85,21 @@ bool soldier::legalMove(chess *chessposition[9][10]){
             }
        }
    }
+
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        if(chessposition[fx][fy]->rb==chessposition[sx][sy]->rb)
+        {
+            return false;
+        }
+    }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        chessposition[sx][sy]=nullptr;
+        cout<<"soldier legalcapture"<<endl;
+        delete chessposition[sx][sy];
+    }
     return true;
 
 }
-void soldier::legalCapture(){
 
-}

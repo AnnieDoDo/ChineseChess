@@ -29,8 +29,39 @@ bool horse::legalMove(chess *chessposition[9][10]){
     {
         return false;
     }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        if(chessposition[fx][fy]->rb==chessposition[sx][sy]->rb)
+        {
+            return false;
+        }
+    }
+    if((abs(fx-sx)!=2||abs(fy-sy)!=1)&&(abs(fx-sx)!=1||abs(fy-sy)!=2))
+    {
+        return false;
+    }
+
+    if(abs(fx-sx)==2&&abs(fy-sy)==1)
+    {
+        int middlex=(fx+sx)/2;
+        if(chessposition[middlex][fy]!=nullptr){
+            return false;
+        }
+    }
+    if(abs(fx-sx)==1&&abs(fy-sy)==2)
+    {
+        int middley=(fy+sy)/2;
+        if(chessposition[fx][middley]!=nullptr){
+            return false;
+        }
+    }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        chessposition[sx][sy]=nullptr;
+        cout<<"horse legalcapture"<<endl;
+        delete chessposition[sx][sy];
+    }
+
     return true;
 }
-void horse::legalCapture(){
 
-}

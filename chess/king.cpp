@@ -52,8 +52,19 @@ bool king::legalMove(chess *chessposition[9][10]){
     {
         return false;
     }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        if(chessposition[fx][fy]->rb==chessposition[sx][sy]->rb)
+        {
+            return false;
+        }
+    }
+    if(chessposition[sx][sy]!=nullptr)
+    {
+        chessposition[sx][sy]=nullptr;
+        cout<<"king legalcapture"<<endl;
+        delete chessposition[sx][sy];
+    }
     return true;
 }
-void king::legalCapture(){
 
-}
