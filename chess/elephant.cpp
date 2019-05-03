@@ -25,6 +25,10 @@ void elephant::legalMoveClickSecond(int x0, int y0){
 }
 bool elephant::legalMove(chess *chessposition[9][10]){
 
+    if((fx==sx)&&(fy==sy))
+    {
+        return false;
+    }
     return true;
 }
 void elephant::legalCapture(){

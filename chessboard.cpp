@@ -23,6 +23,7 @@ chessboard::chessboard(QObject *parent) :
             board[i][j] = nullptr;
         }
     }
+    //if red and black change, soldier's and elephant's rb have to change.
     board[0][0]=new rook;
     board[0][0]->chesspic = QPixmap("red_rook.png");
     board[1][0]=new horse;
@@ -120,7 +121,7 @@ void chessboard::setBoard(){
     {
         y1 = (x-355+88)/88;
         x1 = (y-40)/86;
-        if((board[y1][x1]!=nullptr)&&(board[y1][x1]->rb==turn))
+        if((board[y1][x1]!=nullptr))//&&(board[y1][x1]->rb==turn))
         {
             board[y1][x1]->legalMoveClickFirst(y1,x1);
             clickedCount=1;
@@ -135,7 +136,7 @@ void chessboard::setBoard(){
             board[y1][x1]=nullptr;
             chessboard::renewboard();
             cout<<"legalmove"<<endl;
-            turn=!turn;
+            //turn=!turn;
         }else{
             cout<<"illegalmove"<<endl;
         }

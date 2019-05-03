@@ -25,6 +25,10 @@ void cannon::legalMoveClickSecond(int x0, int y0){
 }
 bool cannon::legalMove(chess *chessposition[9][10]){
 
+    if((fx==sx)&&(fy==sy))
+    {
+        return false;
+    }
     return true;
 }
 void cannon::legalCapture(){

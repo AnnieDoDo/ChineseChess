@@ -32,9 +32,11 @@ bool king::legalMove(chess *chessposition[9][10]){
     }
     if(abs(sy-fy)>1){
         return false;
-    }{
+    }else {
         plus=plus+abs(sy-fy);
     }
+
+
     if(plus>1){
         return false;
     }

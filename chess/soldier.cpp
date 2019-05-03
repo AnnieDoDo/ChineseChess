@@ -24,7 +24,68 @@ void soldier::legalMoveClickSecond(int x0, int y0){
 
 }
 bool soldier::legalMove(chess *chessposition[9][10]){
-   return true;
+    if((fx==sx)&&(fy==sy))
+    {
+        return false;
+    }
+    if(chessposition[fx][fy]->rb==0)
+   {
+       int plus =0;
+       if(sy-fy<0)
+       {
+           return false;
+       }
+       if(sy>4)
+       {
+           if(abs(sx-fx)>1){
+               return false;
+           }else{
+               plus=plus+abs(sx-fx);
+           }
+           if(sy-fy>1){
+               return false;
+           }else {
+               plus=plus+sy-fy;
+           }
+           if(plus>1){
+               return false;
+           }
+       }else {
+            if(sx-fx!=0)
+            {
+                return false;
+            }
+       }
+    }else
+   {
+       int plus =0;
+       if(sy-fy>0)
+       {
+           return false;
+       }
+       if(sy<=4)
+       {
+           if(abs(sx-fx)>1){
+               return false;
+           }else{
+               plus=plus+abs(sx-fx);
+           }
+           if(abs(sy-fy)>1){
+               return false;
+           }else {
+               plus=plus+abs(sy-fy);
+           }
+           if(plus>1){
+               return false;
+           }
+       }else {
+            if(sx-fx!=0)
+            {
+                return false;
+            }
+       }
+   }
+    return true;
 
 }
 void soldier::legalCapture(){

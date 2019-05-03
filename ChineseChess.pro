@@ -63,4 +63,16 @@ DISTFILES += \
     chessboard.png \
     red_king.jpg \
     red_king.png \
-    red_advisor.png
+    red_advisor.png \
+    black_advisor.png \
+    black_cannon.png \
+    black_elephant.png \
+    black_horse.png \
+    black_king.png \
+    black_rook.png \
+    black_soldier.png \
+    red_cannon.png \
+    red_elephant.png \
+    red_horse.png \
+    red_rook.png \
+    red_soldier.png
