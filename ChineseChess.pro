@@ -75,4 +75,5 @@ DISTFILES += \
     red_elephant.png \
     red_horse.png \
     red_rook.png \
-    red_soldier.png
+    red_soldier.png \
+    hahablackking.png

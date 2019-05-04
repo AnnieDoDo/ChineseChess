@@ -10,7 +10,7 @@ advisor::advisor()
     sx = 0;
     sy = 0;
     rb = 0;
-    isking = 1;
+    isking = 0;
 }
 
 void advisor::legalMoveClickFirst(int x0,int y0){

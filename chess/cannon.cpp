@@ -32,6 +32,7 @@ bool cannon::legalMove(chess *chessposition[9][10]){
     if((abs(sx-fx)!=0)&&(abs(sy-fy)!=0)){
         return false;
     }
+
     int max=0;
     int min=0;
     int change=0;
@@ -58,6 +59,7 @@ bool cannon::legalMove(chess *chessposition[9][10]){
         unchange=fx;
         change=1;
     }
+
     int check=0;
     min=min+1;
     for(int i=min;i<max;i++){

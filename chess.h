@@ -16,7 +16,7 @@ public:
     virtual void legalMoveClickSecond(int x0,int y0) = 0;
     virtual bool legalMove(chess *chessposition[9][10]) = 0;
 
-    void checkMate();
+    bool checkMate(chess *chessposition[9][10]);
     QPixmap chesspic;
     bool rb;
 protected:
