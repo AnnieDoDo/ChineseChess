@@ -61,12 +61,12 @@ bool chess::checkMate(chess *chessposition[9][10]){
     if(blackking==0)
     {
         cout<<"black lose"<<endl;
-        return false;
+        return true;
     }
     if(redking==0)
     {
         cout<<"red lose"<<endl;
-        return false;
+        return true;
     }
     return false;
 }

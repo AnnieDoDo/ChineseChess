@@ -7,7 +7,7 @@
 #include "chess/horse.h"
 #include "chess/cannon.h"
 #include "chess/soldier.h"
-
+#include "message.h"
 
 using namespace std;
 
@@ -16,6 +16,8 @@ chessboard::chessboard(QObject *parent) :
 {
     clickedCount=0;
     turn=0;
+    checkmate=0;
+    QObject::connect(this,SIGNAL(renewgame()),&mb,SLOT(showEndGameMessage()));
     for(int i=0;i<9;i++)
     {
         for(int j=0;j<10;j++)
@@ -116,7 +118,7 @@ void chessboard::setBoard(){
     int x = newbtnpos->x();
     int y = newbtnpos->y();
 
-
+    checkturn(turn);
     if(clickedCount==0)
     {
         y1 = (x-355+88)/88;
@@ -125,6 +127,7 @@ void chessboard::setBoard(){
         {
             board[y1][x1]->legalMoveClickFirst(y1,x1);
             clickedCount=1;
+
         }else{cout<<"reclick again"<<endl;}
     }else{
         y2 = (x-355+88)/88;
@@ -138,14 +141,18 @@ void chessboard::setBoard(){
             cout<<"legalmove"<<endl;
             if(board[y2][x2]->checkMate(board)==true)
             {
-                cout<<"checkmate"<<endl;
+                cout<<"checkmate"<<endl;        
+                renewgame();
             }
             turn=!turn;
+            checkturn(turn);
         }else{
             cout<<"illegalmove"<<endl;
         }
     }
 }
+
+
 
 
 

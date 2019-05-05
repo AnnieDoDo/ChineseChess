@@ -36,7 +36,8 @@ SOURCES += \
     chess/rook.cpp \
     chess/horse.cpp \
     chess/cannon.cpp \
-    chess/soldier.cpp
+    chess/soldier.cpp \
+    message.cpp
 
 HEADERS += \
     chess.h \
@@ -49,11 +50,13 @@ HEADERS += \
     chess/rook.h \
     chess/horse.h \
     chess/cannon.h \
-    chess/soldier.h
+    chess/soldier.h \
+    message.h
 
 FORMS += \
         mainwindow.ui \
-    widget.ui
+    widget.ui \
+    message.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -75,5 +78,4 @@ DISTFILES += \
     red_elephant.png \
     red_horse.png \
     red_rook.png \
-    red_soldier.png \
-    hahablackking.png
+    red_soldier.png

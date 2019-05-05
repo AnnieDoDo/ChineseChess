@@ -27,15 +27,16 @@ public:
 public slots:
         void checkChessPic();
         void showChessPic(int,int);
+        void showturn(bool);
 
 private:
     Ui::widget *ui;
     QLabel *label1;
     chessboard cb;
-
-
-
-
+    QLabel *redturn;
+    QLabel *blackturn;
+    QFont f;
+    QPalette p;
 };
 
 #endif // WIDGET_H
