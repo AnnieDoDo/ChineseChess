@@ -57,9 +57,9 @@ bool horse::legalMove(chess *chessposition[9][10]){
     }
     if(chessposition[sx][sy]!=nullptr)
     {
+        delete chessposition[sx][sy];
         chessposition[sx][sy]=nullptr;
         cout<<"horse legalcapture"<<endl;
-        delete chessposition[sx][sy];
     }
 
     return true;

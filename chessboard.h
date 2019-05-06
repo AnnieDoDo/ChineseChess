@@ -25,6 +25,7 @@ public:
     int y2;
     int x2;
     message mb;
+    void resetboard();
 
 public slots:
     void setBoard();

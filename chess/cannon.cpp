@@ -87,9 +87,9 @@ bool cannon::legalMove(chess *chessposition[9][10]){
     }
     if(chessposition[sx][sy]!=nullptr&&check==1)
     {
+        delete chessposition[sx][sy];
         chessposition[sx][sy]=nullptr;
         cout<<"cannon legalcapture"<<endl;
-        delete chessposition[sx][sy];
         return true;
     }else if(chessposition[sx][sy]!=nullptr&&check!=1){
         return false;

@@ -111,7 +111,17 @@ chessboard::chessboard(QObject *parent) :
 
 chessboard::~chessboard()
 {
-
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<10;j++)
+        {
+            if(board[i][j]!=nullptr)
+            {
+                delete board[i][j];
+                board[i][j]=nullptr;
+            }
+        }
+    }
 }
 void chessboard::setBoard(){
     QPushButton *newbtnpos=qobject_cast<QPushButton *>(sender());
@@ -137,19 +147,121 @@ void chessboard::setBoard(){
         if(board[y1][x1]->legalMove(board)==true){
             board[y2][x2]=board[y1][x1];
             board[y1][x1]=nullptr;
-            chessboard::renewboard();
+            renewboard();
             cout<<"legalmove"<<endl;
             if(board[y2][x2]->checkMate(board)==true)
             {
                 cout<<"checkmate"<<endl;        
                 renewgame();
+                resetboard();
+                renewboard();
+                checkmate=1;
             }
-            turn=!turn;
+            if(checkmate==0)
+            {
+                turn=!turn;
+            }
+            checkmate=0;
             checkturn(turn);
         }else{
             cout<<"illegalmove"<<endl;
         }
     }
+}
+
+void chessboard::resetboard(){
+    for(int i=0;i<9;i++)
+    {
+        for(int j=0;j<10;j++)
+        {
+            if(board[i][j]!=nullptr)
+            {
+                delete board[i][j];
+                board[i][j]=nullptr;
+            }
+        }
+    }
+    board[0][0]=new rook;
+    board[0][0]->chesspic = QPixmap("red_rook.png");
+    board[1][0]=new horse;
+    board[1][0]->chesspic = QPixmap("red_horse.png");
+    board[2][0]=new elephant;
+    board[2][0]->chesspic = QPixmap("red_elephant.png");
+    board[3][0]=new advisor;
+    board[3][0]->chesspic = QPixmap("red_advisor.png");
+    board[4][0]=new king;
+    board[4][0]->chesspic = QPixmap("red_king.png");
+    board[5][0]=new advisor;
+    board[5][0]->chesspic = QPixmap("red_advisor.png");
+    board[6][0]=new elephant;
+    board[6][0]->chesspic = QPixmap("red_elephant.png");
+    board[7][0]=new horse;
+    board[7][0]->chesspic = QPixmap("red_horse.png");
+    board[8][0]=new rook;
+    board[8][0]->chesspic = QPixmap("red_rook.png");
+    board[1][2]=new cannon;
+    board[1][2]->chesspic = QPixmap("red_cannon.png");
+    board[7][2]=new cannon;
+    board[7][2]->chesspic = QPixmap("red_cannon.png");
+    board[0][3]=new soldier;
+    board[0][3]->chesspic = QPixmap("red_soldier.png");
+    board[2][3]=new soldier;
+    board[2][3]->chesspic = QPixmap("red_soldier.png");
+    board[4][3]=new soldier;
+    board[4][3]->chesspic = QPixmap("red_soldier.png");
+    board[6][3]=new soldier;
+    board[6][3]->chesspic = QPixmap("red_soldier.png");
+    board[8][3]=new soldier;
+    board[8][3]->chesspic = QPixmap("red_soldier.png");
+
+    board[0][9]=new rook;
+    board[0][9]->chesspic = QPixmap("black_rook.png");
+    board[0][9]->rb=1;
+    board[1][9]=new horse;
+    board[1][9]->chesspic = QPixmap("black_horse.png");
+    board[1][9]->rb=1;
+    board[2][9]=new elephant;
+    board[2][9]->chesspic = QPixmap("black_elephant.png");
+    board[2][9]->rb=1;
+    board[3][9]=new advisor;
+    board[3][9]->chesspic = QPixmap("black_advisor.png");
+    board[3][9]->rb=1;
+    board[4][9]=new king;
+    board[4][9]->chesspic = QPixmap("black_king.png");
+    board[4][9]->rb=1;
+    board[5][9]=new advisor;
+    board[5][9]->chesspic = QPixmap("black_advisor.png");
+    board[5][9]->rb=1;
+    board[6][9]=new elephant;
+    board[6][9]->chesspic = QPixmap("black_elephant.png");
+    board[6][9]->rb=1;
+    board[7][9]=new horse;
+    board[7][9]->chesspic = QPixmap("black_horse.png");
+    board[7][9]->rb=1;
+    board[8][9]=new rook;
+    board[8][9]->chesspic = QPixmap("black_rook.png");
+    board[8][9]->rb=1;
+    board[1][7]=new cannon;
+    board[1][7]->chesspic = QPixmap("black_cannon.png");
+    board[1][7]->rb=1;
+    board[7][7]=new cannon;
+    board[7][7]->chesspic = QPixmap("black_cannon.png");
+    board[7][7]->rb=1;
+    board[0][6]=new soldier;
+    board[0][6]->chesspic = QPixmap("black_soldier.png");
+    board[0][6]->rb=1;
+    board[2][6]=new soldier;
+    board[2][6]->chesspic = QPixmap("black_soldier.png");
+    board[2][6]->rb=1;
+    board[4][6]=new soldier;
+    board[4][6]->chesspic = QPixmap("black_soldier.png");
+    board[4][6]->rb=1;
+    board[6][6]=new soldier;
+    board[6][6]->chesspic = QPixmap("black_soldier.png");
+    board[6][6]->rb=1;
+    board[8][6]=new soldier;
+    board[8][6]->chesspic = QPixmap("black_soldier.png");
+    board[8][6]->rb=1;
 }
 
 
